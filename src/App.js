@@ -26,10 +26,6 @@ const App = () => {
 			return;
 		}
 
-		if (prevImg !== imageName) {
-			setPageNumber(1);
-		}
-
 		setLoading(true);
 		imageAPI
 			.getImages(imageName, pageNumber)
@@ -71,6 +67,7 @@ const App = () => {
 
 	const getImage = (imageName) => {
 		setImageName(imageName);
+		setPageNumber(1);
 	};
 
 	const onClickLoadMoreButtton = () => {
